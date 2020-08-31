@@ -1,0 +1,35 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '13.4'
+
+target 'AwesomeProjectagainnnn' do
+  pod 'react-native-lastlast-module', :path => '../node_modules/react-native-lastlast-module'
+  
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+
+  target 'AwesomeProjectagainnnnTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable these next few lines.
+  use_flipper!
+  post_install do |installer|
+    flipper_post_install(installer)
+  end
+end
+
+target 'AwesomeProjectagainnnn-tvOS' do
+  # Pods for AwesomeProjectagainnnn-tvOS
+
+  target 'AwesomeProjectagainnnn-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+end
